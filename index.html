@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,107 +5,164 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Iliya Asadi - CV</title>
   <style>
+    :root {
+      --bg: #f9f9fb;
+      --primary: #3f51b5;
+      --accent: #6c63ff;
+      --text: #333;
+      --light-text: #666;
+      --card-bg: #ffffff;
+      --border-color: #e0e0e0;
+    }
+
     body {
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 2rem;
-      max-width: 800px;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
       margin: auto;
-      background-color: #fdfdfd;
-      color: #333;
+      padding: 2rem;
     }
-    h1, h2 {
-      color: #2a2a2a;
-      border-bottom: 2px solid #e0e0e0;
-      padding-bottom: 0.2rem;
+
+    header {
+      background-color: var(--primary);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+    }
+
     .section {
-      margin-bottom: 2rem;
-      opacity: 0.7;
+      background-color: var(--card-bg);
+      padding: 1.5rem;
+      margin-top: 2rem;
+      border-left: 6px solid var(--accent);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      opacity: 0.9;
       transform: translateY(10px);
-      transition: all 0.3s ease-in-out;
     }
+
     .section:hover {
-      opacity: 1;
       transform: translateY(0);
+      opacity: 1;
     }
+
+    h2 {
+      margin-top: 0;
+      color: var(--primary);
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.4rem;
+    }
+
     ul {
-      padding-left: 1.5rem;
+      padding-left: 1.2rem;
     }
-    .contact {
-      font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 2rem;
-    }
-    .job-title {
-      font-weight: bold;
-    }
-    .institution {
-      font-style: italic;
-    }
+
     li {
       margin-bottom: 0.5rem;
       transition: all 0.2s ease-in-out;
     }
+
     li:hover {
-      padding-left: 5px;
-      color: #000;
+      padding-left: 8px;
+      color: var(--accent);
+    }
+
+    .institution {
+      font-style: italic;
+      color: var(--light-text);
+    }
+
+    .job-title {
+      font-weight: bold;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 0.85rem;
+      margin-top: 3rem;
+      color: var(--light-text);
     }
   </style>
 </head>
 <body>
-  <h1>Iliya Asadi</h1>
-  <div class="contact">
-    Email: iliya70594@gmail.com • GitHub: https://github.com/iliyaasadi• Iran
-  </div>
+  <header>
+    <h1>Iliya Asadi</h1>
+    <p>Email: iliya70594@gmail.com • GitHub: https://github.com/iliyaasadi • Iran</p>
+  </header>
 
-  <div class="section">
-    <h2>Education</h2>
-    <ul>
-      <li>
-        <span class="institution">Amir Kabir University of Technology</span><br />
-        BSc in Computer Science, GPA: 4<br />
-        2023 – Present
-      </li>
-    </ul>
-  </div>
+  <div class="container">
+    <div class="section">
+      <h2>Education</h2>
+      <ul>
+        <li>
+          <span class="institution">Amir Kabir University of Technology</span><br />
+          BSc in Computer Science, GPA: 4<br />
+          2023 – Present
+        </li>
+      </ul>
+    </div>
 
-  <div class="section">
-    <h2>Certifications</h2>
-    <ul>
-      <li>Machine Learning – Stanford University (Coursera)</li>
-    </ul>
-  </div>
+    <div class="section">
+      <h2>Certifications</h2>
+      <ul>
+        <li>Machine Learning – Stanford University (Coursera)</li>
+      </ul>
+    </div>
 
-  <div class="section">
-    <h2>Projects</h2>
-    <ul>
-      <li>
-        <span class="job-title">Java Store Simulation</span><br />
-        Built an OOP-based store simulation with customer management and product tracking.
-      </li>
-      <li>
-        <span class="job-title">CSP Solver (Python)</span><br />
-        Implemented a CSP solver for CNF input using MRV, MCV, and LCV heuristics.
-      </li>
-    </ul>
-  </div>
+    <div class="section">
+      <h2>Projects</h2>
+      <ul>
+        <li>
+          <span class="job-title">Java Store Simulation</span><br />
+          Built an OOP-based store simulation with customer management and product tracking.
+        </li>
+        <li>
+          <span class="job-title">CSP Solver (Python)</span><br />
+          Implemented a CSP solver for CNF input using MRV, MCV, and LCV heuristics.
+        </li>
+      </ul>
+    </div>
 
-  <div class="section">
-    <h2>Skills</h2>
-    <ul>
-      <li>Programming: Python, Java, C</li>
-      <li>Tools: Git, Docker, VSCode, Conda</li>
-      <li>Concepts: Algorithms, Data Structures, Artificial Intelligence, Machine Learning, Optimization, Linear Algebra, Operating Systems</li>
-    </ul>
-  </div>
+    <div class="section">
+      <h2>Skills</h2>
+      <ul>
+        <li>Programming: Python, Java, C</li>
+        <li>Tools: Git, Docker, VSCode</li>
+        <li>Concepts: Algorithms, Data Structures, Artificial Intelligence, Machine Learning</li>
+      </ul>
+    </div>
 
-  <div class="section">
-    <h2>Languages</h2>
-    <ul>
-      <li>English (Fluent)</li>
-      <li>Persian (Native)</li>
-    </ul>
+    <div class="section">
+      <h2>Languages</h2>
+      <ul>
+        <li>English (Fluent)</li>
+        <li>Persian (Native)</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      &copy; 2025 Iliya Asadi — CV Website
+    </div>
   </div>
 </body>
 </html>
