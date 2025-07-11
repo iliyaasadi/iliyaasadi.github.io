@@ -1,168 +1,481 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Iliya Asadi - CV</title>
-  <style>
-    :root {
-      --bg: #f9f9fb;
-      --primary: #3f51b5;
-      --accent: #6c63ff;
-      --text: #333;
-      --light-text: #666;
-      --card-bg: #ffffff;
-      --border-color: #e0e0e0;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 2rem;
-    }
-
-    header {
-      background-color: var(--primary);
-      color: white;
-      padding: 2rem;
-      text-align: center;
-      border-radius: 0 0 12px 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-
-    header p {
-      margin-top: 0.5rem;
-      font-size: 1rem;
-    }
-
-    .section {
-      background-color: var(--card-bg);
-      padding: 1.5rem;
-      margin-top: 2rem;
-      border-left: 6px solid var(--accent);
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-      transition: transform 0.3s ease, opacity 0.3s ease;
-      opacity: 0.9;
-      transform: translateY(10px);
-    }
-
-    .section:hover {
-      transform: translateY(0);
-      opacity: 1;
-    }
-
-    h2 {
-      margin-top: 0;
-      color: var(--primary);
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 0.4rem;
-    }
-
-    ul {
-      padding-left: 1.2rem;
-    }
-
-    li {
-      margin-bottom: 0.5rem;
-      transition: all 0.2s ease-in-out;
-    }
-
-    li:hover {
-      padding-left: 8px;
-      color: var(--accent);
-    }
-
-    .institution {
-      font-style: italic;
-      color: var(--light-text);
-    }
-
-    .job-title {
-      font-weight: bold;
-    }
-
-    .footer {
-      text-align: center;
-      font-size: 0.85rem;
-      margin-top: 3rem;
-      color: var(--light-text);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - My Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom styles to override or extend Tailwind */
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Changed to a light purple linear gradient */
+            background-image: url('3d-flowing-cyber-particles-with-shallow-depth-field.jpg'); /* Lavender to a muted purple */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Makes the background fixed while scrolling */
+            color: #e2e8f0; /* Light gray text for better contrast on dark background */
+        }
+        .bg-gradient-custom {
+            /* Slightly reduced opacity for the dark gradient overlay to let the new background show through */
+            background: linear-gradient(to right, rgba(17, 24, 39, 0.85), rgba(31, 41, 55, 0.85));
+        }
+        .nav-link:hover {
+            color: #6366f1; /* Indigo 500 */
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #6366f1; /* Indigo 500 */
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 70%;
+            height: 3px;
+            background-color: #6366f1; /* Indigo 500 */
+            border-radius: 9999px;
+        }
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Hide scrollbar for a cleaner look, but allow scrolling */
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        /* Typing effect cursor */
+        .typing-text::after {
+            content: '|';
+            animation: blink-caret .75s step-end infinite;
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: white; }
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <h1>Iliya Asadi</h1>
-    <p>Email: iliya70594@gmail.com • GitHub: https://github.com/iliyaasadi • Iran</p>
-  </header>
+<body class="text-gray-200">
 
-  <div class="container">
-    <div class="section">
-      <h2>Education</h2>
-      <ul>
-        <li>
-          <span class="institution">Amir Kabir University of Technology</span><br />
-          BSc in Computer Science, GPA: 4<br />
-          2023 – Present
-        </li>
-      </ul>
+    <!-- Mobile Navigation Toggle -->
+    <div class="md:hidden fixed top-4 right-4 z-50">
+        <button id="mobile-menu-button" class="p-2 rounded-md text-gray-200 bg-gray-800 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <i class="fas fa-bars text-xl"></i>
+        </button>
     </div>
 
-    <div class="section">
-      <h2>Certifications</h2>
-      <ul>
-        <li>Machine Learning – Stanford University (Coursera)</li>
-      </ul>
+    <!-- Mobile Navigation Menu -->
+    <nav id="mobile-menu" class="fixed inset-y-0 right-0 w-64 bg-gray-900 z-40 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+        <div class="p-4 flex justify-end">
+            <button id="close-mobile-menu" class="text-gray-200 hover:text-indigo-400 focus:outline-none">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <ul class="flex flex-col p-4 space-y-4">
+            <li><a href="#home" class="nav-link text-lg font-medium text-gray-200 hover:text-indigo-400 transition duration-300 block py-2 px-4 rounded-md">Home</a></li>
+            <li><a href="#about" class="nav-link text-lg font-medium text-gray-200 hover:text-indigo-400 transition duration-300 block py-2 px-4 rounded-md">About</a></li>
+            <li><a href="#education" class="nav-link text-lg font-medium text-gray-200 hover:text-indigo-400 transition duration-300 block py-2 px-4 rounded-md">Education</a></li>
+            <li><a href="#experience" class="nav-link text-lg font-medium text-gray-200 hover:text-indigo-400 transition duration-300 block py-2 px-4 rounded-md">Experience</a></li>
+            <li><a href="#projects" class="nav-link text-lg font-medium text-gray-200 hover:text-indigo-400 transition duration-300 block py-2 px-4 rounded-md">Projects</a></li>
+            <li><a href="#skills" class="nav-link text-lg font-medium text-gray-200 hover:text-indigo-400 transition duration-300 block py-2 px-4 rounded-md">Skills</a></li>
+            <li><a href="#cv" class="nav-link text-lg font-medium text-gray-200 hover:text-indigo-400 transition duration-300 block py-2 px-4 rounded-md">CV</a></li>
+            <li><a href="#contact" class="nav-link text-lg font-medium text-gray-200 hover:text-indigo-400 transition duration-300 block py-2 px-4 rounded-md">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div class="min-h-screen flex flex-col md:flex-row">
+        <!-- Sidebar Navigation -->
+        <nav class="hidden md:flex flex-col w-64 bg-gray-900 shadow-lg p-6 fixed h-full overflow-y-auto">
+            <div class="flex flex-col items-center mb-8">
+                <img src="https://placehold.co/120x120/6366f1/FFFFFF/png?text=Profile" alt="Profile Picture" class="rounded-full w-32 h-32 object-cover border-4 border-indigo-500 mb-4">
+                <h1 class="text-3xl font-bold text-gray-50 text-center">Your Name</h1>
+                <p class="text-indigo-400 text-lg mt-2">I am a <span id="typing-text" class="typing-text">Developer</span></p>
+            </div>
+            <ul class="space-y-4">
+                <li><a href="#home" class="nav-link text-lg font-medium text-gray-200 hover:text-indigo-400 transition duration-300 block py-2 px-4 rounded-md"><i class="fas fa-home mr-3"></i>Home</a></li>
+                <li><a href="#about" class="nav-link text-lg font-medium text-gray-200 hover:text-indigo-400 transition duration-300 block py-2 px-4 rounded-md"><i class="fas fa-user mr-3"></i>About</a></li>
+                <li><a href="#education" class="nav-link text-lg font-medium text-gray-200 hover:text-indigo-400 transition duration-300 block py-2 px-4 rounded-md"><i class="fas fa-graduation-cap mr-3"></i>Education</a></li>
+                <li><a href="#experience" class="nav-link text-lg font-medium text-gray-200 hover:text-indigo-400 transition duration-300 block py-2 px-4 rounded-md"><i class="fas fa-briefcase mr-3"></i>Experience</a></li>
+                <li><a href="#projects" class="nav-link text-lg font-medium text-gray-200 hover:text-indigo-400 transition duration-300 block py-2 px-4 rounded-md"><i class="fas fa-project-diagram mr-3"></i>Projects</a></li>
+                <li><a href="#skills" class="nav-link text-lg font-medium text-gray-200 hover:text-indigo-400 transition duration-300 block py-2 px-4 rounded-md"><i class="fas fa-tools mr-3"></i>Skills</a></li>
+                <li><a href="#cv" class="nav-link text-lg font-medium text-gray-200 hover:text-indigo-400 transition duration-300 block py-2 px-4 rounded-md"><i class="fas fa-file-alt mr-3"></i>CV</a></li>
+                <li><a href="#contact" class="nav-link text-lg font-medium text-gray-200 hover:text-indigo-400 transition duration-300 block py-2 px-4 rounded-md"><i class="fas fa-envelope mr-3"></i>Contact</a></li>
+        </ul>
+        </nav>
+
+        <!-- Page Content -->
+        <main class="flex-1 md:ml-64 p-8 md:p-12 lg:p-16 bg-gradient-custom min-h-screen">
+
+            <!-- Home Section -->
+            <section id="home" class="min-h-screen flex items-center justify-center text-center py-20">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
+                        Hello, I'm <span class="text-indigo-400">Your Name</span>
+                    </h2>
+                    <p class="text-2xl md:text-3xl text-gray-300 mb-8">
+                        A passionate <span id="home-typing-text" class="typing-text">Developer</span> building innovative solutions.
+                    </p>
+                    <a href="#about" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                        Learn More About Me
+                    </a>
+                </div>
+            </section>
+
+            <!-- About Me Section -->
+            <section id="about" class="py-20">
+                <h2 class="text-4xl font-bold section-title text-white">About Me</h2>
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl">
+                    <p class="text-lg leading-relaxed mb-4">
+                        Hi there, my name is <span class="font-semibold text-indigo-300">Your Name</span>. I'm a passionate and driven developer with a strong foundation in various technologies. My journey in the tech world has equipped me with skills in software development, problem-solving, and creating engaging user experiences.
+                    </p>
+                    <p class="text-lg leading-relaxed mb-4">
+                        I thrive on tackling complex challenges and transforming ideas into robust, scalable solutions. My interests span across web development, data analysis, and exploring new technologies that push the boundaries of what's possible.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        I am always eager to learn, collaborate, and contribute to impactful projects that make a difference. Let's connect and build something amazing together!
+                    </p>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education" class="py-20">
+                <h2 class="text-4xl font-bold section-title text-white">Education</h2>
+                <div class="space-y-8">
+                    <div class="bg-gray-800 p-8 rounded-lg shadow-xl">
+                        <h3 class="text-2xl font-semibold text-indigo-300 mb-2">University Name</h3>
+                        <p class="text-xl text-gray-300 mb-2">Bachelor of Science in Computer Science</p>
+                        <p class="text-gray-400 mb-4">September 2018 - June 2022 | City, Country</p>
+                        <p class="text-lg leading-relaxed">
+                            Graduated with High Honors, focusing on software engineering, algorithms, and artificial intelligence.
+                            Relevant Coursework: Data Structures, Algorithms, Operating Systems, Database Management, Machine Learning, Web Development.
+                        </p>
+                    </div>
+                    <div class="bg-gray-800 p-8 rounded-lg shadow-xl">
+                        <h3 class="text-2xl font-semibold text-indigo-300 mb-2">High School Name</h3>
+                        <p class="text-xl text-gray-300 mb-2">High School Diploma</p>
+                        <p class="text-gray-400 mb-4">September 2014 - June 2018 | City, Country</p>
+                        <p class="text-lg leading-relaxed">
+                            Achieved excellent academic results and participated in various science and technology clubs.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="py-20">
+                <h2 class="text-4xl font-bold section-title text-white">Experience</h2>
+                <div class="space-y-8">
+                    <div class="bg-gray-800 p-8 rounded-lg shadow-xl">
+                        <h3 class="text-2xl font-semibold text-indigo-300 mb-2">Software Engineer</h3>
+                        <p class="text-xl text-gray-300 mb-2">Tech Solutions Inc. | January 2023 - Present</p>
+                        <p class="text-gray-400 mb-4">City, Country</p>
+                        <ul class="list-disc list-inside text-lg leading-relaxed space-y-2">
+                            <li>Developed and maintained full-stack web applications using React and Node.js.</li>
+                            <li>Implemented RESTful APIs and integrated with various third-party services.</li>
+                            <li>Collaborated with cross-functional teams to define, design, and ship new features.</li>
+                            <li>Optimized application performance and ensured high code quality through rigorous testing.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-800 p-8 rounded-lg shadow-xl">
+                        <h3 class="text-2xl font-semibold text-indigo-300 mb-2">Junior Developer Intern</h3>
+                        <p class="text-xl text-gray-300 mb-2">Innovate Corp. | Summer 2022</p>
+                        <p class="text-gray-400 mb-4">City, Country</p>
+                        <ul class="list-disc list-inside text-lg leading-relaxed space-y-2">
+                            <li>Assisted in the development of a mobile application prototype using Flutter.</li>
+                            <li>Participated in daily stand-ups and contributed to agile development processes.</li>
+                            <li>Conducted code reviews and assisted in debugging and troubleshooting.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="py-20">
+                <h2 class="text-4xl font-bold section-title text-white">Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-xl transition duration-300 hover:scale-105 hover:shadow-2xl">
+                        <h3 class="text-2xl font-semibold text-indigo-300 mb-3">Project Alpha</h3>
+                        <p class="text-gray-300 mb-4">A web-based task management application built with React and Firebase.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">React</span>
+                            <span class="bg-indigo-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Firebase</span>
+                            <span class="bg-indigo-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Tailwind CSS</span>
+                        </div>
+                        <a href="#" class="text-indigo-400 hover:text-indigo-300 transition duration-300 font-medium" target="_blank" rel="noopener noreferrer">
+                            View Project <i class="fas fa-external-link-alt ml-1 text-sm"></i>
+                        </a>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-xl transition duration-300 hover:scale-105 hover:shadow-2xl">
+                        <h3 class="text-2xl font-semibold text-indigo-300 mb-3">Project Beta</h3>
+                        <p class="text-gray-300 mb-4">A Python script for automating data analysis and report generation.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Python</span>
+                            <span class="bg-indigo-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Pandas</span>
+                            <span class="bg-indigo-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Matplotlib</span>
+                        </div>
+                        <a href="#" class="text-indigo-400 hover:text-indigo-300 transition duration-300 font-medium" target="_blank" rel="noopener noreferrer">
+                            View Project <i class="fas fa-external-link-alt ml-1 text-sm"></i>
+                        </a>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-xl transition duration-300 hover:scale-105 hover:shadow-2xl">
+                        <h3 class="text-2xl font-semibold text-indigo-300 mb-3">Project Gamma</h3>
+                        <p class="text-gray-300 mb-4">A simple mobile game developed with Unity and C#.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Unity</span>
+                            <span class="bg-indigo-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">C#</span>
+                            <span class="bg-indigo-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Game Dev</span>
+                        </div>
+                        <a href="#" class="text-indigo-400 hover:text-indigo-300 transition duration-300 font-medium" target="_blank" rel="noopener noreferrer">
+                            View Project <i class="fas fa-external-link-alt ml-1 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="py-20">
+                <h2 class="text-4xl font-bold section-title text-white">Skills</h2>
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl">
+                    <h3 class="text-2xl font-semibold text-indigo-300 mb-4">Languages & Technologies</h3>
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <span class="bg-gray-700 text-gray-200 px-4 py-2 rounded-full text-lg font-medium shadow-md">JavaScript</span>
+                        <span class="bg-gray-700 text-gray-200 px-4 py-2 rounded-full text-lg font-medium shadow-md">Python</span>
+                        <span class="bg-gray-700 text-gray-200 px-4 py-2 rounded-full text-lg font-medium shadow-md">HTML5</span>
+                        <span class="bg-gray-700 text-gray-200 px-4 py-2 rounded-full text-lg font-medium shadow-md">CSS3</span>
+                        <span class="bg-gray-700 text-gray-200 px-4 py-2 rounded-full text-lg font-medium shadow-md">React</span>
+                        <span class="bg-gray-700 text-gray-200 px-4 py-2 rounded-full text-lg font-medium shadow-md">Node.js</span>
+                        <span class="bg-gray-700 text-gray-200 px-4 py-2 rounded-full text-lg font-medium shadow-md">Express.js</span>
+                        <span class="bg-gray-700 text-gray-200 px-4 py-2 rounded-full text-lg font-medium shadow-md">MongoDB</span>
+                        <span class="bg-gray-700 text-gray-200 px-4 py-2 rounded-full text-lg font-medium shadow-md">SQL</span>
+                        <span class="bg-gray-700 text-gray-200 px-4 py-2 rounded-full text-lg font-medium shadow-md">Git</span>
+                        <span class="bg-gray-700 text-gray-200 px-4 py-2 rounded-full text-lg font-medium shadow-md">Docker</span>
+                        <span class="bg-gray-700 text-gray-200 px-4 py-2 rounded-full text-lg font-medium shadow-md">AWS</span>
+                    </div>
+
+                    <h3 class="text-2xl font-semibold text-indigo-300 mb-4">Tools & Methodologies</h3>
+                    <div class="flex flex-wrap gap-4">
+                        <span class="bg-gray-700 text-gray-200 px-4 py-2 rounded-full text-lg font-medium shadow-md">VS Code</span>
+                        <span class="bg-gray-700 text-gray-200 px-4 py-2 rounded-full text-lg font-medium shadow-md">Jira</span>
+                        <span class="bg-700 text-gray-200 px-4 py-2 rounded-full text-lg font-medium shadow-md">Agile/Scrum</span>
+                        <span class="bg-gray-700 text-gray-200 px-4 py-2 rounded-full text-lg font-medium shadow-md">RESTful APIs</span>
+                        <span class="bg-gray-700 text-gray-200 px-4 py-2 rounded-full text-lg font-medium shadow-md">Unit Testing</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CV Section -->
+            <section id="cv" class="py-20">
+                <h2 class="text-4xl font-bold section-title text-white">CV & Résumé</h2>
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl text-center">
+                    <p class="text-lg leading-relaxed mb-6">
+                        You can download my full Curriculum Vitae and Résumé below.
+                    </p>
+                    <div class="flex flex-col md:flex-row justify-center gap-6">
+                        <a href="https://placehold.co/800x600/6366f1/FFFFFF/pdf?text=Your_CV" target="_blank" rel="noopener noreferrer"
+                           class="inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                            <i class="fas fa-download mr-3"></i> Download CV
+                        </a>
+                        <a href="https://placehold.co/800x600/6366f1/FFFFFF/pdf?text=Your_Resume" target="_blank" rel="noopener noreferrer"
+                           class="inline-flex items-center justify-center bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                            <i class="fas fa-download mr-3"></i> Download Résumé
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm mt-6">
+                        (Note: These are placeholder links. Please replace them with your actual CV/Résumé PDF URLs.)
+                    </p>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="py-20">
+                <h2 class="text-4xl font-bold section-title text-white">Contact</h2>
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl max-w-2xl mx-auto">
+                    <p class="text-lg leading-relaxed mb-6 text-center">
+                        Feel free to reach out to me via email or connect on social media.
+                    </p>
+
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-300 text-lg font-medium mb-2">Name</label>
+                            <input type="text" id="name" name="name" required
+                                   class="w-full p-3 bg-gray-700 border border-gray-600 rounded-md focus:ring-indigo-500 focus:border-indigo-500 text-gray-200 placeholder-gray-400">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-300 text-lg font-medium mb-2">Email</label>
+                            <input type="email" id="email" name="email" required
+                                   class="w-full p-3 bg-gray-700 border border-gray-600 rounded-md focus:ring-indigo-500 focus:border-indigo-500 text-gray-200 placeholder-gray-400">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-300 text-lg font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" required
+                                      class="w-full p-3 bg-gray-700 border border-gray-600 rounded-md focus:ring-indigo-500 focus:border-indigo-500 text-gray-200 placeholder-gray-400"></textarea>
+                        </div>
+                        <button type="submit"
+                                class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-md shadow-lg transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-800">
+                            Send Message
+                        </button>
+                    </form>
+
+                    <div id="form-message" class="mt-6 p-4 rounded-md text-center hidden"></div>
+
+                    <div class="mt-8 text-center">
+                        <h3 class="text-2xl font-semibold text-indigo-300 mb-4">Social Profiles</h3>
+                        <div class="flex justify-center space-x-6">
+                            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-indigo-400 transition duration-300 text-3xl">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-indigo-400 transition duration-300 text-3xl">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="mailto:youremail@example.com" class="text-gray-300 hover:text-indigo-400 transition duration-300 text-3xl">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <!-- Add more social links as needed -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="text-center py-10 mt-12 border-t border-gray-700 text-gray-400 text-sm">
+                <p>&copy; <span id="current-year"></span> Your Name. All rights reserved.</p>
+                <p class="mt-2">Built with <span class="text-red-500">&hearts;</span> and Tailwind CSS.</p>
+            </footer>
+
+        </main>
     </div>
 
-    <div class="section">
-      <h2>Projects</h2>
-      <ul>
-        <li>
-          <span class="job-title">Java Store Simulation</span><br />
-          Built an OOP-based store simulation with customer management and product tracking.
-        </li>
-        <li>
-          <span class="job-title">CSP Solver (Python)</span><br />
-          Implemented a CSP solver for CNF input using MRV, MCV, and LCV heuristics.
-        </li>
-      </ul>
-    </div>
+    <script>
+        // JavaScript for dynamic effects and interactions
 
-    <div class="section">
-      <h2>Skills</h2>
-      <ul>
-        <li>Programming: Python, Java, C</li>
-        <li>Tools: Git, Docker, VSCode</li>
-        <li>Concepts: Algorithms, Data Structures, Artificial Intelligence, Machine Learning</li>
-      </ul>
-    </div>
+        // Typing effect for Home section and Sidebar
+        const typingTexts = [
+            "Developer",
+            "Engineer",
+            "Innovator",
+            "Problem Solver"
+        ];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingSpeed = 150; // Milliseconds per character
+        const deletingSpeed = 100; // Milliseconds per character
+        const delayBetweenTexts = 2000; // Milliseconds before typing next text
 
-    <div class="section">
-      <h2>Languages</h2>
-      <ul>
-        <li>English (Fluent)</li>
-        <li>Persian (Native)</li>
-      </ul>
-    </div>
+        function typeEffect(elementId, textsArray) {
+            const element = document.getElementById(elementId);
+            if (!element) return;
 
-    <div class="footer">
-      &copy; 2025 Iliya Asadi — CV Website
-    </div>
-  </div>
+            const currentText = textsArray[textIndex];
+
+            if (isDeleting) {
+                // Delete characters
+                element.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                // Type characters
+                element.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? deletingSpeed : typingSpeed;
+
+            if (!isDeleting && charIndex === currentText.length) {
+                // Done typing current text, start deleting after a delay
+                typeSpeed = delayBetweenTexts;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                // Done deleting, move to next text
+                isDeleting = false;
+                textIndex = (textIndex + 1) % textsArray.length;
+                typeSpeed = 500; // Short delay before typing new text
+            }
+
+            setTimeout(() => typeEffect(elementId, textsArray), typeSpeed);
+        }
+
+        // Start typing effects on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            typeEffect('typing-text', typingTexts); // Sidebar
+            typeEffect('home-typing-text', typingTexts); // Home section
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a.nav-link').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                        // Close mobile menu after clicking a link
+                        if (mobileMenu.classList.contains('translate-x-0')) {
+                            mobileMenu.classList.remove('translate-x-0');
+                            mobileMenu.classList.add('translate-x-full');
+                        }
+                    }
+                });
+            });
+
+            // Contact Form Submission (Client-side only)
+            const contactForm = document.getElementById('contact-form');
+            const formMessage = document.getElementById('form-message');
+
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault(); // Prevent actual form submission
+
+                // Basic client-side validation
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+
+                if (name && email && message) {
+                    // Simulate successful submission
+                    formMessage.textContent = 'Your message has been sent. Thank you!';
+                    formMessage.className = 'mt-6 p-4 rounded-md text-center bg-green-600 text-white';
+                    formMessage.classList.remove('hidden');
+                    contactForm.reset(); // Clear the form
+                } else {
+                    formMessage.textContent = 'Please fill in all fields.';
+                    formMessage.className = 'mt-6 p-4 rounded-md text-center bg-red-600 text-white';
+                    formMessage.classList.remove('hidden');
+                }
+
+                // Hide message after a few seconds
+                setTimeout(() => {
+                    formMessage.classList.add('hidden');
+                }, 5000);
+            });
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenu.classList.add('translate-x-0');
+            });
+
+            closeMobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.remove('translate-x-0');
+                mobileMenu.classList.add('translate-x-full');
+            });
+        });
+    </script>
 </body>
 </html>
